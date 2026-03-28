@@ -1,0 +1,43 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.header { 
+    padding: 30px;
+    background-color: bisque;
+    color: brown;
+    text-decoration: none;
+    border: 10px black;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: brown;
+    text-decoration: underline;
+}
+
+body { 
+    font-family: Arial;
+    margin: 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-style: normal;
+    margin: 0;
+}
+
+h2 {
+    font-size: 28px;
+    font-style: italic;
+    margin: 0;
+}
