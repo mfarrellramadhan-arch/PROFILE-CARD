@@ -4,59 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- style css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    <!-- style font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>PORTFOLIO</title>
+    <title>Farrell Ramadhan | Frontend Developer</title>
 </head>
 
+<!-- Navbar -->
 <body>
     <header class="header">
         <nav class="navbar">
-            <div class="logo">
-                <h2>PROFILE CARD</h2>
-                
-            </div>
+            <div class="container">
 
-            <ul class="menu">
-                <li><a href="#" class="cta">Home</a></li>
-                <li><a href="#" class="cta">About</a></li>
-                <li><a href="#" class="cta">Contact</a></li>
+                <!-- Logo -->
+                <div class="logo">
+                    <a class="navbar-brand fw-bold" href="#">PROFILE CARD</a>
+                </div>
+            
+                <button 
+                    class="navbar-toggler" 
+                    type="button"
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+            <ul class="menu" id="menu">
+                <li><a href="#home" class="cta">Home</a></li>
+                <li><a href="#about" class="cta">About</a></li>
+                <li><a href="#project" class="cta">Project</a></li>
+                <li><a href="#contact" class="cta">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-text"> 
-                <h1>Nama Saya,<br>
-                    <span>Farrell Ramadhan</span>
-                </h1>
-                <h2>Beginner Web Dev</h2>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container hero-content">    
+                <!-- text -->
+                <div class="hero-text" data-aos="fade-up"> 
+                    <h1>HELLO! <br>
+                        My name is <br>
+                        <span class="highlight">Farrell Ramadhan</span>
+                    </h1>
+                        <p><b> I am a Beginner Web Dev </b></p>
 
                 <div class="social-icon">
                     <a href="https://www.instagram.com/flerstilljobless/" target="_blank">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-
+        
                     <a href="https://github.com/mfarrellramadhan-arch" target="_blank">
-                        <i class="fa-brands fa-github"> </i>
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank"> 
+                        <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
             </div>
-
+            <!-- image -->
             <div class="hero-img">
                 <div class="img-wrapper">
-                    <img src="farrell.png.jpg" alt="Profile Pict">
+                    <img src="hero-img.png.png" alt="Profile Pict">
                 </div>
             </div>
+        </section>
 
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="container" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+                <div class="wrapper-about">
+                    <div class="about-text">
+                        <h1>ABOUT ME !</h1>
+                            <P> i am a beginner web developer that focus on FrontEnd web developing.</P>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ab dolorum deserunt cumque, esse delectus deleniti veniam? Sed ratione soluta sapiente. Earum repellat soluta assumenda, omnis inventore hic nihil quisquam.</p>
+                    
+                    <div class="about-image">
+                        <img src="" alt="">
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
 
 
-        
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true
+      });
+    </script>
+
 </body>
 </html>
