@@ -4,59 +4,248 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- style css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    <!-- style font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>PORTFOLIO</title>
+    <title>Farrell Ramadhan | Frontend Developer</title>
 </head>
 
+<!-- Navbar -->
 <body>
     <header class="header">
         <nav class="navbar">
-            <div class="logo">
-                <h2>PROFILE CARD</h2>
-                
-            </div>
+            <div class="container">
 
-            <ul class="menu">
-                <li><a href="#" class="cta">Home</a></li>
-                <li><a href="#" class="cta">About</a></li>
-                <li><a href="#" class="cta">Contact</a></li>
+                <!-- Logo -->
+                <div class="logo">
+                    <a class="navbar-brand fw-bold" href="#">PROFILE CARD</a>
+                </div>
+            
+            <ul class="menu" id="menu">
+                <li><a href="#home" class="cta">Home</a></li>
+                <li><a href="#about" class="cta">About</a></li>
+                <li><a href="#project" class="cta">Project</a></li>
+                <li><a href="#contact" class="cta">Contact</a></li>
             </ul>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-text"> 
-                <h1>Nama Saya,<br>
-                    <span>Farrell Ramadhan</span>
-                </h1>
-                <h2>Beginner Web Dev</h2>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container hero-content">    
+                <!-- text -->
+                <div class="hero-text" data-aos="fade-up"> 
+                    <h1>HELLO! <br>
+                        My name is <br>
+                        <span class="highlight">Farrell Ramadhan</span>
+                    </h1>
+                        <p><b> I am a Beginner Web Dev </b></p>
 
                 <div class="social-icon">
                     <a href="https://www.instagram.com/flerstilljobless/" target="_blank">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-
+        
                     <a href="https://github.com/mfarrellramadhan-arch" target="_blank">
-                        <i class="fa-brands fa-github"> </i>
+                        <i class="fa-brands fa-github"></i>
                     </a>
-                </div>
+
+                    <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank"> 
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <!-- <a href="#contact" class="btn-cta">Contact Me</a> -->
+                </div>      
             </div>
 
+            <!-- image -->
             <div class="hero-img">
                 <div class="img-wrapper">
-                    <img src="farrell.png.jpg" alt="Profile Pict">
+                    <img src="identity/hero-img.png" alt="Profile Pict">
                 </div>
             </div>
-
         </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="container" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+                <div class="wrapper-about">
+                <!-- Image Kiri -->
+                    <div class="about-img" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="100">
+                         <img src="identity/farrell.png-removebg-preview(1)(1).png" alt="about-img">
+                    </div>
+
+                <!-- Text Kanan -->
+                    <div class="about-text" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                        <h1>ABOUT ME</h1>
+                            <P> Hey there! I am Farrell, a Computer Science student at UPN "Veteran" Yogyakarta and a proud alumnus of MAN 1 Yogyakarta.</P>
+                            <p>My journey in tech is fueled by a passion for Frontend Web Development, where I specialize in turning complex ideas into sleek, interactive interfaces. With a background in Layout Design and UI/UX, I dont just code but I craft digital experiences that are intuitive, responsive, and look expensive.</p>
+                            <p>When Im not pushing pixels or debugging code,
+                                You'll find me in the Land of Dawn. I'm a Mobile Legends enthusiast with a serious goal: going pro. Whether Im optimizing a website's performance or carrying my team in a ranked match, I play to win.</p>
+                            <p>Im always open to collaborating on cool projects or talking meta-strategies. Let's connect!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project" id="project">
+            <div class="container">
+
+                <div class="wrapper-project" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> 
+
+                    <!-- Header Project -->
+                    <div>
+                        <h1 class="project-header">MY PROJECT</h1>
+                    </div>
+
+                    <!-- Project Card -->
+                    <div class="card-list">
+
+                        <!-- Card 1 -->
+                        <div class="project-card" data-aos="fade-right" data-aos-duration="1000">
+                            <h2> Project 1 </h2>
+                            <div class="card-img">
+                                <img src="gallery/img-1.jpg" alt="Project 1">
+                            </div>
+                            
+                        </div>
+    
+                        <!-- Card 2 -->
+                        <div class="project-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                            <h2> Project 2 </h2>
+                            <div class="card-img">
+                                <img src="gallery/img-2.jpg" alt="Project 1">
+                            </div>
+                        </div>
+    
+                        <!-- Card 3 -->
+                        <div class="project-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                            <h2> Project 3 </h2>
+                            <div class="card-img">
+                                <img src="gallery/img-3.jpg" alt="Project 1">
+                            </div>
+                        </div>
+    
+                        <!-- Card 4 -->
+                        <div class="project-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                            <h2> Project 4 </h2>
+                            <div class="card-img">
+                                <img src="gallery/img-4.jpg" alt="Project 1">
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+
+                <div class="wrapper-contact" data-aos="fade-down" data-aos-duration="1200">
+                    <h1> CONTACT ME ! </h1>
+                    
+                        <form class="contact-form" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+                            <!-- Name -->
+                            <div class="form-group"> 
+                                <label for="name"> Your name</label>
+                                <input type="text" id="name" placeholder="Enter your name" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Your email</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group">
+                                <label for="message">Your message</label>
+                               <textarea id="message" name="message" rows="5" placeholder="Write your message" required> </textarea>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="form-group"> 
+                                <button type="submit">Send message</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+            <footer class="footer">
+                <div class="container">
+              
+                  <div class="footer-content">
+              
+                    <div class="footer-left">
+
+                        <!-- Kolom 1: Branding -->
+                        <div class="footer-col">
+                            <h2 class="footer-logo">
+                              LET'S <br>
+                              GET WORK <br>
+                              TOGETHER
+                           </h2>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-right">
+
+                          <!-- Kolom 2: Navigation -->
+                        <div class="footer-col">
+                            <h3>Navigation</h3>
+                            <ul class="footer-link">
+                              <li><a href="#home">Home</a></li>
+                              <li><a href="#about">About</a></li>
+                              <li><a href="#project">Project</a></li>
+                              <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    
+                          <!-- Kolom 3: Social -->
+                          <div class="footer-col">
+                            <h3>Follow Me</h3>
+                            <div class="footer-social">
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              <a href="#"><i class="fa-brands fa-github"></i></a>
+                              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                          </div>
+                    </div>
+                
+                  </div>
+              
+                  <!-- Bottom -->
+                  <div class="footer-bottom">
+                    <p>© 2026 Farrell Ramadhan. All rights reserved.</p>
+                  </div>
+              
+                </div>
+              </footer>
+        </footer>
     </main>
 
+    <script src="script.js"></script>
 
-        
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true
+      });
+    </script>
+
 </body>
 </html>
