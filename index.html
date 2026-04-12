@@ -25,24 +25,18 @@
             <div class="container">
 
                 <!-- Logo -->
-                <div class="logo">
+                <div class="logo" id="logo">
                     <a class="navbar-brand fw-bold" href="#">PROFILE CARD</a>
                 </div>
-            
-                <button 
-                    class="navbar-toggler" 
-                    type="button"
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-                </button>
             
             <ul class="menu" id="menu">
                 <li><a href="#home" class="cta">Home</a></li>
                 <li><a href="#about" class="cta">About</a></li>
                 <li><a href="#project" class="cta">Project</a></li>
                 <li><a href="#contact" class="cta">Contact</a></li>
+                <!-- <li><button class="btn" id="btn-dark-mode"> test </button></li> -->
             </ul>
+            </div>
         </nav>
     </header>
 
@@ -88,15 +82,19 @@
             <div class="container" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
 
                 <div class="wrapper-about">
-                    <div class="about-text">
+                <!-- Image Kiri -->
+                    <div class="about-img" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="100">
+                         <img src="identity/farrell.png-removebg-preview(1)(1).png" alt="about-img">
+                    </div>
+
+                <!-- Text Kanan -->
+                    <div class="about-text" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
                         <h1>ABOUT ME</h1>
                             <P> Hey there! I am Farrell, a Computer Science student at UPN "Veteran" Yogyakarta and a proud alumnus of MAN 1 Yogyakarta.</P>
-                            <p>I live at the intersection of logic and aesthetics. My journey in tech is fueled by a passion for Frontend Web Development, where I specialize in turning complex ideas into sleek, interactive interfaces. With a background in Layout Design and UI/UX, I dont just code—I craft digital experiences that are intuitive, responsive, and (most importantly) look expensive.</p>
-                            <p>When Im not pushing pixels or debugging code...
-                                You'll find me in the Land of Dawn. I'm a hardcore Mobile Legends enthusiast with a serious goal: going pro. Whether Im optimizing a website's performance or carrying my team in a ranked match, I play to win.</p>
+                            <p>My journey in tech is fueled by a passion for Frontend Web Development, where I specialize in turning complex ideas into sleek, interactive interfaces. With a background in Layout Design and UI/UX, I dont just code but I craft digital experiences that are intuitive, responsive, and look expensive.</p>
+                            <p>When Im not pushing pixels or debugging code,
+                                You'll find me in the Land of Dawn. I'm a Mobile Legends enthusiast with a serious goal: going pro. Whether Im optimizing a website's performance or carrying my team in a ranked match, I play to win.</p>
                             <p>Im always open to collaborating on cool projects or talking meta-strategies. Let's connect!</p>
-                    <div class="about-image">
-                        <img src="" alt="">
                     </div>
                 </div>
             </div>
@@ -108,7 +106,7 @@
                 <div class="wrapper-project" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> 
 
                     <!-- Header Project -->
-                    <div class="project-header">
+                    <div>
                         <h1 class="project-header">MY PROJECT</h1>
                     </div>
 
@@ -119,7 +117,7 @@
                         <div class="project-card" data-aos="fade-right" data-aos-duration="1000">
                             <h2> Project 1 </h2>
                             <div class="card-img">
-                                <img src="identity/farrell.png-removebg-preview - Copy.png" alt="Project 1">
+                                <img src="gallery/img-1.jpg" alt="Project 1">
                             </div>
                             
                         </div>
@@ -128,7 +126,7 @@
                         <div class="project-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
                             <h2> Project 2 </h2>
                             <div class="card-img">
-                                <img src="identity/farrell.png-removebg-preview - Copy.png" alt="Project 1">
+                                <img src="gallery/img-2.jpg" alt="Project 1">
                             </div>
                         </div>
     
@@ -136,7 +134,7 @@
                         <div class="project-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                             <h2> Project 3 </h2>
                             <div class="card-img">
-                                <img src="identity/farrell.png-removebg-preview - Copy.png" alt="Project 1">
+                                <img src="gallery/img-3.jpg" alt="Project 1">
                             </div>
                         </div>
     
@@ -144,7 +142,7 @@
                         <div class="project-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                             <h2> Project 4 </h2>
                             <div class="card-img">
-                                <img src="identity/farrell.png-removebg-preview - Copy.png" alt="Project 1">
+                                <img src="gallery/img-4.jpg" alt="Project 1">
                             </div>
                         </div>
                     </div>
@@ -152,12 +150,96 @@
             </div>
         </section>
 
-        <section class="footer">
-            
+        <section class="contact" id="contact">
+            <div class="container">
 
+                <div class="wrapper-contact" data-aos="fade-down" data-aos-duration="1200">
+                    <h1> CONTACT ME ! </h1>
+                    
+                        <form class="contact-form" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+                            <!-- Name -->
+                            <div class="form-group"> 
+                                <label for="name"> Your name</label>
+                                <input type="text" id="name" placeholder="Enter your name" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Your email</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group">
+                                <label for="message">Your message</label>
+                               <textarea id="message" name="message" rows="5" placeholder="Write your message" required> </textarea>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="form-group"> 
+                                <button type="submit">Send message</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
         </section>
+
+        <footer class="footer" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+            <footer class="footer">
+                <div class="container">
+              
+                  <div class="footer-content">
+              
+                    <div class="footer-left">
+
+                        <!-- Kolom 1: Branding -->
+                        <div class="footer-col">
+                            <h2 class="footer-logo">
+                              LET'S <br>
+                              GET WORK <br>
+                              TOGETHER
+                           </h2>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-right">
+
+                          <!-- Kolom 2: Navigation -->
+                        <div class="footer-col">
+                            <h3>Navigation</h3>
+                            <ul class="footer-link">
+                              <li><a href="#home">Home</a></li>
+                              <li><a href="#about">About</a></li>
+                              <li><a href="#project">Project</a></li>
+                              <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    
+                          <!-- Kolom 3: Social -->
+                          <div class="footer-col">
+                            <h3>Follow Me</h3>
+                            <div class="footer-social">
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              <a href="#"><i class="fa-brands fa-github"></i></a>
+                              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                          </div>
+                    </div>
+                
+                  </div>
+              
+                  <!-- Bottom -->
+                  <div class="footer-bottom">
+                    <p>© 2026 Farrell Ramadhan. All rights reserved.</p>
+                  </div>
+              
+                </div>
+              </footer>
+        </footer>
     </main>
 
+    <script src="script.js"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
