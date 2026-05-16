@@ -1,11 +1,38 @@
-// button toggle theme
-// const btn = document.getElementById('btn-dark-mode');
-// btn.addEventListener('click', function() {
-//     document.body.classList.toggle('light-theme');
+// ============================================================
+//  NAVBAR — Hamburger Toggle
+// ============================================================
 
-//     if (document.body.classList.contains('light-theme')) {
-//         btn.innerText = "Light";    
-//     } else {
-//         btn.innerText = "Dark"
-//     }
-// });
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+const hamburgerIcon = hamburger.querySelector('i');
+
+function openMenu() {
+  menu.classList.add('active');
+  hamburgerIcon.classList.replace('fa-bars', 'fa-xmark');
+  hamburger.setAttribute('aria-expanded', 'true');
+}
+
+function closeMenu() {
+  menu.classList.remove('active');
+  hamburgerIcon.classList.replace('fa-xmark', 'fa-bars');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+
+function toggleMenu() {
+  menu.classList.contains('active') ? closeMenu() : openMenu();
+}
+
+// Toggle on hamburger click
+hamburger.addEventListener('click', toggleMenu);
+
+// Close when a nav link is clicked (mobile UX)
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close when clicking outside the navbar
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+    closeMenu();
+  }
+});
