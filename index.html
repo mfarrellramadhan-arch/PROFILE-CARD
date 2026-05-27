@@ -54,7 +54,7 @@
             My name is <br>
             <span class="text-highlight">Farrell Ramadhan</span>
           </h1>
-          <p>I am a Beginner Web Dev</p>
+          <p class="text-scramble">I am a Beginner Web Dev</p>
           <div class="social-icons">
             <a href="https://www.instagram.com/flerstilljobless/" target="_blank" rel="noopener" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
@@ -146,7 +146,7 @@
 
           <h2 class="section-title">CONTACT ME!</h2>
 
-          <form class="contact__form" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+          <form class="contact__form" id="form" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <div class="form-group">
               <label for="name">Your name</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -160,10 +160,18 @@
               <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
             </div>
             <div class="form-group">
-              <button type="submit">Send Message</button>
+              <button type="submit" id="form-btn">Send Message</button>
             </div>
           </form>
 
+          <div class="form-alert" id="alert">
+            <button class="close-btn" id="close" aria-label="close"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+             </button>
+            <p class="alert-top">SUCCESS!</p> <span></span>
+            <p class="alert-body">Your message is already send</p> <span></span>
+          </div>
         </div>
       </div>
     </section>

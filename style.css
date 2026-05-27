@@ -90,10 +90,6 @@
     padding: 0;
   }
   
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
     font-family: var(--font-family);
     font-size: var(--font-size-base);
@@ -103,6 +99,7 @@
     background-attachment: fixed;
     background-image: var(--color-bg-gradient), var(--color-bg-image);
     line-height: 1.6;
+    scroll-behavior: smooth;
   }
   
   img {
@@ -266,26 +263,6 @@
     transition: transform var(--transition);
   }
   
-  /* Animated underline on nav links */
-  .navbar__menu a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background: var(--color-underline);
-    transition: width var(--transition);
-  }
-  
-  .navbar__menu a:hover {
-    transform: scale(1.1);
-  }
-  
-  .navbar__menu a:hover::after {
-    width: 100%;
-  }
-  
   
   /* ============================================================
      HERO
@@ -297,7 +274,6 @@
     overflow: hidden;
   }
   
-  /* Decorative blob */
   .hero::before {
     content: '';
     position: absolute;
@@ -327,7 +303,6 @@
     flex: 1;
     max-width: 700px;
   
-    /* Start hidden for CSS animation */
     opacity: 0;
     animation: fadeUp 1s ease-in forwards;
   }
@@ -666,6 +641,29 @@
     box-shadow: 0 5px 15px var(--color-glow-soft);
   }
   
+  .form-alert {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    min-height: 50px;
+    background-color: var(--blue-400);
+  }
+
+  .form-alert .alert-top {
+    color: rgb(0, 211, 0);
+  }
+
+  .form-alert .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    color: red;
+  }
   
   /* ============================================================
      FOOTER
@@ -779,7 +777,7 @@
       border-radius: var(--radius-md);
       padding: var(--space-xs) 0;
       box-shadow: 0 10px 30px var(--color-shadow-dark);
-      /* Hidden state */
+
       opacity: 0;
       visibility: hidden;
       transform: translateY(-15px);
@@ -849,6 +847,27 @@
     /* Footer */
     .footer__tagline {
       font-size: 40px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .navbar__menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--color-underline);
+      transition: width var(--transition);
+    }
+    
+    .navbar__menu a:hover {
+      transform: scale(1.1);
+    }
+    
+    .navbar__menu a:hover::after {
+      width: 100%;
     }
   }
   
