@@ -1,7 +1,5 @@
 /* ============================================================
    DESIGN TOKENS
-   Semua nilai desain ada di sini. Ubah di sini = berubah
-   di seluruh website.
    ============================================================ */
    :root {
     /* --- Brand Colors --- */
@@ -89,6 +87,10 @@
     margin: 0;
     padding: 0;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
   body {
     font-family: var(--font-family);
@@ -99,7 +101,6 @@
     background-attachment: fixed;
     background-image: var(--color-bg-gradient), var(--color-bg-image);
     line-height: 1.6;
-    scroll-behavior: smooth;
   }
   
   img {
@@ -481,7 +482,7 @@
     background: var(--color-surface-card);
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-surface-border);
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition: transform var(--transition), box-shadow var(--transition) ;
   }
   
   .project-card:hover {
