@@ -11,11 +11,12 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/testing/navbar-a.css">
 </head>
 
 <body>
@@ -24,53 +25,75 @@
   <header class="header">
     <nav class="navbar">
       <div class="container">
-
+  
         <a class="navbar__logo" href="#home">PROFILE CARD</a>
-
+  
         <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
-
+  
         <ul class="navbar__menu" id="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#project">Project</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <div class="navbar__pill"></div>
+  
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#project" class="nav-link">Project</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          
+          <li class="nav__toggle-mobile">
+            <button class="toggle-button"> TEST </button>
+          </li>
         </ul>
-
+  
+        <button class="toggle-button nav__toggle-dekstop"> TEST </button>
+  
       </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
+     <!-- ===== HERO ===== -->
+     <section class="hero" id="home">
       <div class="container hero__inner">
 
         <div class="hero__text" data-aos="fade-up">
           <h1>
-            HELLO! <br>
+            HELLO!<br>
             My name is <br>
             <span class="text-highlight">Farrell Ramadhan</span>
           </h1>
-          <p class="text-scramble">I am a Beginner Web Dev</p>
-          <div class="social-icons">
-            <a href="https://www.instagram.com/flerstilljobless/" target="_blank" rel="noopener" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://github.com/mfarrellramadhan-arch" target="_blank" rel="noopener" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
+          <p class="text-scramble" id="text-scramble">FrontEnd Webdev</p>
+
+            <!-- <div class="social-icons">
+              <a href="https://www.instagram.com/flerstilljobless/" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://github.com/mfarrellramadhan-arch" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div> -->
+
+            <div class="cta-icon">
+              <a href="#contact" class="button-cta"> 
+                GET IN TOUCH 
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" width="16px" height="16px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+              </a>
+            </div>  
+
         </div>
 
         <div class="hero__img">
           <div class="hero__img-wrapper">
-            <img src="assets/identity/hero-img.png" alt="Farrell Ramadhan">
+            <img src="assets/identity/hero-img2.jpeg" alt="Farrell Ramadhan">
           </div>
         </div>
 
@@ -89,7 +112,7 @@
           <div class="about__text" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
             <h2 class="section-title">ABOUT ME</h2>
             <p>Hey there! I am Farrell, a Computer Science student at UPN "Veteran" Yogyakarta and a proud alumnus of MAN 1 Yogyakarta.</p>
-            <p>My journey in tech is fueled by a passion for Frontend Web Development, where I specialize in turning complex ideas into sleek, interactive interfaces. With a background in Layout Design and UI/UX, I don't just code — I craft digital experiences that are intuitive, responsive, and look expensive.</p>
+            <p>My journey in tech is fueled by a passion for Frontend Web Development, where I specialize in turning complex ideas into sleek, interactive interfaces. With a background in Layout Design and UI/UX, I don't just code, I craft digital experiences that are intuitive, responsive, and look expensive.</p>
             <p>When I'm not pushing pixels or debugging code, you'll find me in the Land of Dawn. I'm a Mobile Legends enthusiast with a serious goal: going pro. Whether I'm optimizing a website's performance or carrying my team in a ranked match, I play to win.</p>
             <p>I'm always open to collaborating on cool projects or talking meta-strategies. Let's connect!</p>
           </div>
@@ -210,6 +233,9 @@
               <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin"></i>
               </a>
+              <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
             </div>
           </div>
 
@@ -224,8 +250,14 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
+  <script>AOS.init({ once: true, duration: 800, });</script>
   <script src="script.js"></script>
+  <script src="assets/testing/magnetic-pill-nav.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new MagneticPillNav('.navbar__menu', '.navbar__pill', '.nav-link');
+    });
+  </script>
 
 </body>
 </html>
