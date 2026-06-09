@@ -2,11 +2,13 @@
 
 A modern and responsive personal portfolio website built to showcase my profile, skills, projects, and professional journey as a Front-End Web Developer.
 
+
 👋 About
 
 Hi! I’m Farrell Ramadhan, a Computer Science student at UPN “Veteran” Yogyakarta with a strong passion for Frontend Web Development, UI/UX Design, and creating engaging digital experiences.
 
 This portfolio serves as a central place where I share my projects, technical skills, and contact information for potential collaborations and opportunities.
+
 
 ✨ Features
 
@@ -19,6 +21,7 @@ This portfolio serves as a central place where I share my projects, technical sk
 * Social media integration
 * Modern UI with custom animations
 
+
 🛠️ Tech Stack
 
 Frontend
@@ -27,11 +30,13 @@ Frontend
 * CSS3
 * JavaScript (Vanilla JS)
 
+
 Design
 
 * Figma
 * UI/UX Design Principles
 * Responsive Web Design
+
 
 📂 Sections
 
@@ -51,17 +56,24 @@ Contact
 
 Contact form and social media links for networking and collaboration.
 
+
 🚀 Live Demo
 
 Visit the website here:
 
 https://mfarrellramadhan-arch.github.io/PROFILE-CARD/
 
+
 📸 Preview
 
 You can add a screenshot of your website here:
 
-![Portfolio Preview](assets/documentation/Hero.png)
+![Portfolio Preview]
+(assets/documentation/Hero.png) 
+(assets/documentation/About.png)
+(assets/documentation/Project.png)
+(assets/documentation/Contact.png)
+(assets/documentation/Footer.png)
 
 
 🎯 Future Improvements
