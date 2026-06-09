@@ -40,19 +40,19 @@ Design
 
 📂 Sections
 
-Home
+- Home -
 
 Introduction and personal branding.
 
-About Me
+- About Me -
 
 Brief background, education, interests, and career goals.
 
-Projects
+- Projects -
 
 A collection of selected projects showcasing my development skills and creativity.
 
-Contact
+- Contact -
 
 Contact form and social media links for networking and collaboration.
 
