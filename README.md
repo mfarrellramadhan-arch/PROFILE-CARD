@@ -68,12 +68,11 @@ https://mfarrellramadhan-arch.github.io/PROFILE-CARD/
 
 You can add a screenshot of your website here:
 
-![Portfolio Preview]
-(assets/documentation/Hero.png) 
-(assets/documentation/About.png)
-(assets/documentation/Project.png)
-(assets/documentation/Contact.png)
-(assets/documentation/Footer.png)
+![Portfolio Preview](assets/documentation/Hero.png) 
+![Portfolio Preview](assets/documentation/About.png)
+![Portfolio Preview](assets/documentation/Project.png)
+![Portfolio Preview](assets/documentation/Contact.png)
+![Portfolio Preview](assets/documentation/Footer.png)
 
 
 🎯 Future Improvements
