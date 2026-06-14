@@ -63,6 +63,7 @@ document.addEventListener("click", (e) => {
 
 const btnForm = document.getElementById("form-btn");
 const form = document.getElementById("form");
+const alert = document.getElementById('alert')
 const linkURL =
   "https://script.google.com/macros/s/AKfycbzZ5MhZe_OIQEpKlbQApchzrjZ6E3l7Iajk5a6Bgh5x79kgUQ_oSqRk4nN_v5NHzsg9ng/exec";
 
@@ -74,7 +75,10 @@ form.addEventListener("submit", async (e) => {
 
   try {
     await fetch(linkURL, { method: "POST", body: new FormData(form) });
-    alert("Pesan anda berhasil terkirim!");
+    alert.style.display = 'block'
+    setTimeout(() => {
+      alert.style.display = 'none'
+    }, 2000)
     form.reset();
   } catch (error) {
     alert("Ada kesalahan saat mengirim pesan. Silakan coba lagi.");
@@ -118,3 +122,19 @@ function textScramble(element, text, duration = SCRAMBLE_DURATION, speed = SCRAM
 
 const scrambleEl = document.getElementById("text-scramble");
 textScramble(scrambleEl, scrambleEl.textContent);
+
+// CLOSE BUTTON
+
+document.body.addEventListener('click', (e) => {
+  const dismissBtn = e.target.closest('[data-dismiss-target]')
+
+  if(!dismissBtn) return;
+
+  const targetSelector = dismissBtn.getAttribute('data-dismiss-target')
+
+  const targetElement = dismissBtn.closest(targetSelector)
+  
+  if(targetElement) {
+    targetElement.style.display = 'none'
+  }
+});

@@ -273,7 +273,7 @@ section {
 }
 
 .navbar__logo {
-  font-size: 28px;
+  font-size: clamp(0.8rem, 5vw, 1.6rem);
   font-weight: var(--font-weight-bold);
   color: var(--text-color);
   transition: opacity var(--transition);
@@ -733,26 +733,34 @@ section {
   box-shadow: 0 5px 15px var(--color-glow-soft);
 }
 
-.form-alert {
+.alert {
   display: none;
   position: relative;
   width: 100%;
   max-width: 300px;
-  min-height: 50px;
+  min-height: 100px;
   background-color: var(--blue-400);
 }
 
-.form-alert .alert-top {
-  color: rgb(0, 211, 0);
+.alert, .alert-top {
+  border-radius: var(--radius-md);
 }
 
-.form-alert .close-btn {
+.alert .alert-top {
+  color: var(--color-text);
+  text-shadow: var(--color-shadow-dark);
+  background: rgb(0, 185, 0);
+}
+
+.alert .close-btn {
   position: absolute;
   top: 0;
   right: 0;
-  width: 20px;
-  background: none;
-  border: none;
+  width: 100%;
+  max-width: 20px;
+  background: white;
+  border: 1px solid var(--color-surface-border);
+  border-radius: 50%;
   outline: none;
   color: red;
 }
@@ -855,7 +863,7 @@ section {
   .navbar .container {
     justify-content: space-between;
   }
-  
+
   .nav__toggle-dekstop {
     display: none;
     order: 2; 
@@ -886,7 +894,7 @@ section {
     flex-direction: column;
     gap: 0;
     background: var(--color-nav-bg);
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     border: 1px solid var(--color-surface-border);
     border-radius: var(--radius-md);
     padding: var(--space-xs) 0;
@@ -894,14 +902,15 @@ section {
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-15px);
+    transform: translate3d(0, -15px, 0);
+    will-change: transform, opacity, visibility;
     transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
   }
 
   .navbar__menu.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   .navbar__menu li {
@@ -950,7 +959,7 @@ section {
   }
 
   .hero__img-wrapper img {
-    max-width: 140px;
+    max-width: 180px;
     box-shadow: 0 0 20px var(--color-glow-strong);
   }
 
