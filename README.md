@@ -66,8 +66,6 @@ https://mfarrellramadhan-arch.github.io/PROFILE-CARD/
 
 📸 Preview
 
-You can add a screenshot of your website here:
-
 ![Portfolio Preview](assets/documentation/Whole-page.png) 
 
 🎯 Future Improvements
