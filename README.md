@@ -66,7 +66,8 @@ https://mfarrellramadhan-arch.github.io/PROFILE-CARD/
 
 📸 Preview
 
-![Portfolio Preview](assets/documentation/Whole-page.png) 
+
+![Portfolio Preview](assets/documentation/whole-page.png) 
 
 🎯 Future Improvements
 
