@@ -1,7 +1,7 @@
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 
 const SCROLL_DELAY = 360;
-const CLOSE_TIMEOUT = 3000;
+const CLOSE_TIMEOUT = 5000;
 const SCRAMBLE_DURATION = 2000;
 const SCRAMBLE_SPEED = 25;
 const MOBILE_BREAKPOINT = 768;

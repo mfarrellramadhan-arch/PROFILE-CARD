@@ -4,9 +4,7 @@
 @import url('css/utilities.css');
 
 /* 2. Components */
-/* @import url('css/components/navbar.css');
-@import url('css/components/navbar-a.css'); */
-@import url('css/components/testing.css');
+@import url('css/components/navbar.css');
 @import url('css/components/hero.css');
 @import url('css/components/about.css');
 @import url('css/components/projects.css');
