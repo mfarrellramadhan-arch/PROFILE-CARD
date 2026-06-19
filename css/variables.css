@@ -1,0 +1,96 @@
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+   :root {
+    /* --- Brand Colors --- */
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-700: #234274;
+    --blue-800: #1e3a8a;
+    --blue-900: #1a2849;
+    --blue-950: #1f3f99;
+  
+    /* --- Text --- */
+    --color-text: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.87);
+    --color-text-dim: rgba(204, 204, 204, 1);
+    --color-text-faint: #94a3b8;
+  
+    /* --- Accent --- */
+    --color-accent: var(--blue-500);
+    --color-accent-light: var(--blue-400);
+    --color-accent-hover: rgba(52, 132, 253, 1);
+  
+    /* --- Background --- */
+    --color-bg-gradient: linear-gradient(135deg, var(--blue-900), var(--blue-700), var(--blue-950));
+    --color-bg-image: url(assets/identity/background.png);
+  
+    /* --- Surface --- */
+    --color-surface-light: rgba(59, 130, 246, 0.2);
+    --color-surface-medium: rgba(30, 58, 138, 0.4);
+    --color-surface-card: rgba(255, 255, 255, 0.05);
+    --color-surface-border: rgba(255, 255, 255, 0.1);
+  
+    /* --- Navigation --- */
+    --color-nav-bg: linear-gradient(135deg, var(--blue-500), var(--blue-800), var(--blue-500));
+    --color-nav-shadow: rgba(59, 130, 246, 0.5);
+  
+    /* --- Button --- */
+    --color-btn-bg: linear-gradient(135deg, var(--blue-500), var(--blue-400));
+    --color-btn-bg-hover: linear-gradient(135deg, rgba(59, 131, 246, 0.69), rgba(96, 165, 250, 0.69));
+    --color-btn-outline: rgb(72, 145, 255);
+  
+    /* --- Glow / Shadows --- */
+    --color-glow-soft: rgba(59, 130, 246, 0.3);
+    --color-glow-medium: rgba(131, 178, 255, 0.4);
+    --color-glow-strong: rgba(139, 191, 255, 0.6);
+    --color-shadow-dark: rgba(0, 0, 0, 0.3);
+  
+    /* --- Semantic Colors: Error Alert --- */
+    --error-50: #fef2f2;
+    --error-100: rgba(239, 68, 68, 0.15);
+    --error-400: #f87171;
+    --error-500: #ef4444;
+    --error-600: #dc2626;
+    --error-glow: rgba(239, 68, 68, 0.25);
+  
+    /* --- Semantic Colors: Success Alert --- */
+    --success-50: #f0fdf4;
+    --success-100: rgba(16, 185, 129, 0.15);
+    --success-400: #34d399;
+    --success-500: #10b981;
+    --success-600: #059669;
+    --success-glow: rgba(16, 185, 129, 0.25);
+  
+    /* --- Misc --- */
+    --color-divider: rgba(255, 255, 255, 0.1);
+    --color-focus-ring: rgb(149, 190, 255);
+    --color-underline: #f7f7f7;
+  
+    /* --- Spacing --- */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: 60px;
+    --space-2xl: 80px;
+    --space-3xl: 100px;
+  
+    /* --- Typography --- */
+    --font-family: "Poppins", sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 2rem;
+    --font-size-hero: 3rem;
+    --font-weight-base: 400;
+    --font-weight-bold: 600;
+  
+    /* --- Layout --- */
+    --container-max: 1200px;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+    --radius-pill: 50px;
+    --transition: 0.3s ease;
+  }

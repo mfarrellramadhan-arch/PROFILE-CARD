@@ -1,6 +1,7 @@
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 
 const SCROLL_DELAY = 360;
+const CLOSE_TIMEOUT = 3000;
 const SCRAMBLE_DURATION = 2000;
 const SCRAMBLE_SPEED = 25;
 const MOBILE_BREAKPOINT = 768;
@@ -63,6 +64,8 @@ document.addEventListener("click", (e) => {
 
 const btnForm = document.getElementById("form-btn");
 const form = document.getElementById("form");
+const alertBox = document.getElementById('alert')
+const errorBox = document.getElementById('error')
 const linkURL =
   "https://script.google.com/macros/s/AKfycbzZ5MhZe_OIQEpKlbQApchzrjZ6E3l7Iajk5a6Bgh5x79kgUQ_oSqRk4nN_v5NHzsg9ng/exec";
 
@@ -74,11 +77,22 @@ form.addEventListener("submit", async (e) => {
 
   try {
     await fetch(linkURL, { method: "POST", body: new FormData(form) });
-    alert("Pesan anda berhasil terkirim!");
+      alertBox.classList.add('show');
     form.reset();
+
+    setTimeout(() => {
+      alertBox.classList.replace('show', 'notShow');
+    }, CLOSE_TIMEOUT)
+
   } catch (error) {
-    alert("Ada kesalahan saat mengirim pesan. Silakan coba lagi.");
+    errorBox.classList.add('show');
     console.error("Error!", error.message);
+    form.reset();
+
+    setTimeout(() => {
+      errorBox.classList.replace('show', 'notShow');
+    });
+
   } finally {
     btnForm.innerHTML = "Send Message";
     btnForm.disabled = false;
@@ -118,3 +132,40 @@ function textScramble(element, text, duration = SCRAMBLE_DURATION, speed = SCRAM
 
 const scrambleEl = document.getElementById("text-scramble");
 textScramble(scrambleEl, scrambleEl.textContent);
+
+// CLOSE BUTTON
+
+document.body.addEventListener('click', (e) => {
+  const dismissBtn = e.target.closest('[data-dismiss-target]')
+
+  if(!dismissBtn) return;
+
+  const targetSelector = dismissBtn.getAttribute('data-dismiss-target')
+
+  const targetElement = dismissBtn.closest(targetSelector)
+  
+  if(targetElement) {
+    targetElement.style.display = 'none'
+  }
+});
+
+
+// BACK TO TOP BUTTON
+const backToTop = document.getElementById('backToTop')
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300) {
+    backToTop.classList.add('show');
+  } else {backToTop.classList.remove('show')}
+})
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+
+
+// LIGHT MODE / DARK MODE
