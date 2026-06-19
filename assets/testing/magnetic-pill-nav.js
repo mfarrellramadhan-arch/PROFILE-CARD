@@ -5,7 +5,7 @@ class MagneticPillNav {
    * @param {string} linkSelector       — CSS selector untuk setiap nav link
    */
   constructor(containerSelector, pillSelector, linkSelector) {
-    // FIX: pakai querySelector, bukan getElementById
+
     this.linksContainer = document.querySelector(containerSelector);
 
     if (!this.linksContainer) {
@@ -21,25 +21,25 @@ class MagneticPillNav {
       return;
     }
 
+    this._scrollEndTimer = null;
+    this._scrollEndCheck = null;
+
     this.init();
   }
 
   movePill(el, showImmediately = false) {
-    // Hitung posisi relatif terhadap container (.navbar__menu)
     const parentRect = this.linksContainer.getBoundingClientRect();
     const elRect     = el.getBoundingClientRect();
 
-    // FIX: tidak ada transform di pill, jadi left langsung = selisih kiri
     this.pill.style.left   = (elRect.left - parentRect.left) + 'px';
     this.pill.style.width  = elRect.width  + 'px';
     this.pill.style.height = elRect.height + 'px';
     this.pill.style.top    = (elRect.top  - parentRect.top)  + 'px';
 
-    // Pertama kali: munculkan pill tanpa animasi agar tidak "terbang dari pojok"
     if (showImmediately) {
       this.pill.style.transition = 'none';
       this.pill.style.opacity = '1';
-      // Restore transition di frame berikutnya
+ 
       requestAnimationFrame(() => {
         this.pill.style.transition = '';
       });
@@ -48,45 +48,75 @@ class MagneticPillNav {
     }
   }
 
+
+  _holdLockUntilScrollSettles() {
+    if (this._scrollEndCheck) {
+      window.removeEventListener('scroll', this._scrollEndCheck);
+    }
+
+    const releaseLock = () => {
+      this.isScrollingProgrammatically = false;
+      window.removeEventListener('scroll', this._scrollEndCheck);
+      this._scrollEndCheck = null;
+    };
+
+    const armRelease = () => {
+      clearTimeout(this._scrollEndTimer);
+      this._scrollEndTimer = setTimeout(releaseLock, 120);
+    };
+
+    this._scrollEndCheck = armRelease;
+    window.addEventListener('scroll', this._scrollEndCheck, { passive: true });
+
+    armRelease();
+  }
+
   init() {
-    // Set posisi awal pill ke active link (tanpa animasi)
+    this.isScrollingProgrammatically = false;
+
     const activeLink = this.linksContainer.querySelector('.active');
     if (activeLink) {
-      // Tunggu layout selesai baru hitung posisi
+
       setTimeout(() => this.movePill(activeLink, true), 60);
     }
 
     this.links.forEach(link => {
-      // Hover: pill ikut bergerak
-      link.addEventListener('mouseenter', () => this.movePill(link));
 
-      // Click: update active class + pindah pill
+      link.addEventListener('mouseenter', () => {
+        if (!this.isScrollingProgrammatically) this.movePill(link)});
+
       link.addEventListener('click', () => {
+        this.isScrollingProgrammatically = true;
         this.links.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
-        this.movePill(link);
+        const isMobile = window.innerHeight < 768;
+
+        setTimeout (() => {
+          this.movePill(link);
+          this._holdLockUntilScrollSettles();
+        }, isMobile ? 360 : 0);
+        
       });
     });
 
-    // Mouse keluar dari menu → pill kembali ke active link
     this.linksContainer.addEventListener('mouseleave', () => {
       const currentActive = this.linksContainer.querySelector('.active');
       if (currentActive) this.movePill(currentActive);
     });
 
-    // Update saat window resize (posisi bisa bergeser)
     window.addEventListener('resize', () => {
       const currentActive = this.linksContainer.querySelector('.active');
       if (currentActive) this.movePill(currentActive, true);
     }, { passive: true });
 
-    // Update active berdasarkan scroll section
     const sections = ['home', 'about', 'project', 'contact'];
     window.addEventListener('scroll', () => {
+      if (this.isScrollingProgrammatically) return;
+
       let current = sections[0];
       sections.forEach(id => {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) current = id;
+        if (el && el.getBoundingClientRect().top <= 120) {current = id;};
       });
 
       let changed = false;
@@ -103,10 +133,5 @@ class MagneticPillNav {
       }
     }, { passive: true });
 
-    // Scroll effect pada header
-    // window.addEventListener('scroll', () => {
-    //   const header = document.querySelector('.header');
-    //   if (header) header.classList.toggle('scrolled', window.scrollY > 40);
-    // }, { passive: true });
   }
 }
