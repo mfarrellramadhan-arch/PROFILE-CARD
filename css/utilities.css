@@ -1,0 +1,160 @@
+/* ============================================================
+     UTILITIES
+   ============================================================ */
+.text-highlight {
+  color: var(--color-accent-hover);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-shadow: 0 5px 20px var(--color-glow-soft);
+}
+
+.button-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-md);
+
+  min-width: 180px;
+  min-height: 40px;
+  padding: 8px 12px;
+  font-weight: 600;
+  gap: var(--space-xs);
+
+  border-radius: 20px;
+  outline: 1px solid var(--blue-700);
+  box-shadow: 0 8px 12px var(--blue-400);
+  color: var(--color-text);
+  background: var(--color-btn-bg);
+  transition: all var(--transition);
+  opacity: 0.8;
+}
+
+.button-cta:hover {
+  cursor: pointer;
+  transform: translate(2px, -4px);
+  opacity: 1;
+  background: var(--color-btn-bg-hover);
+}
+
+.button-backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 80px;
+  z-index: 9999;
+  padding: 4px;
+  box-shadow: 0 2px 4px var(--blue-900);
+  background: var(--color-btn-bg);
+  outline: 1px solid var(--blue-700);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-text);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.button-backToTop:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+
+.button-backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-icons a {
+  font-size: 28px;
+  color: var(--color-text);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: var(--color-accent-hover);
+}
+
+.glass-card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-surface-border);
+}
+
+/* ============================================================
+       ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTopRight {
+  from {
+    transform: translateY(-50px) translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutTopRight {
+  from {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px) translateX(50px);
+  }
+}
+
+@media (max-width: 768px) {
+    .button-backToTop {
+        bottom: 40px;
+        right: 40px;
+    }
+}

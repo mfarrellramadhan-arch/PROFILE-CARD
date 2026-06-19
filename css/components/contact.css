@@ -1,0 +1,120 @@
+/* ============================================================
+     CONTACT
+     ============================================================ */
+.contact {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-block: var(--space-3xl);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--blue-500);
+  opacity: 0.2;
+  filter: blur(80px);
+  bottom: 10%;
+  right: 10%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(20px);
+  background: var(--color-surface-medium);
+  box-shadow: 0 20px 60px var(--color-shadow-dark);
+  border: 1px solid var(--color-surface-border);
+}
+
+.contact__inner .section-title {
+  padding-inline: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.contact__form {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-sm);
+}
+
+.form-group label {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-surface-border);
+  background: var(--color-surface-card);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  transition: border-color var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: var(--color-focus-ring);
+  border-color: var(--color-accent-light);
+  box-shadow: 0 0 0 3px var(--color-glow-soft);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group button {
+  align-self: flex-start;
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--radius-sm);
+  outline: 1px solid var(--color-btn-outline);
+  border: 1px solid var(--color-surface-border);
+  background: var(--color-btn-bg-hover);
+  opacity: 0.8;
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition);
+}
+
+.form-group button:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px var(--color-shadow-dark);
+}
+
+.form-group button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.form-group button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px var(--color-glow-soft);
+}

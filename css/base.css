@@ -1,0 +1,82 @@
+/* ============================================================
+     BASE RESET
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  color: var(--color-text);
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--color-bg-gradient), var(--color-bg-image);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ============================================================
+          LAYOUT
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-hero: 2rem;
+  }
+
+  .about__inner,
+  .projects__inner,
+  .contact__inner {
+    padding: var(--space-md);
+  }
+
+  .form-group button {
+    align-self: stretch;
+  }
+
+  .alert {
+    top: var(--space-md);
+    right: 5%;
+    max-width: 90%;
+  }
+
+  .error {
+    top: var(--space-md);
+    right: 5%;
+    max-width: 90%;
+  }
+}

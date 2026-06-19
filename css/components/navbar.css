@@ -1,0 +1,254 @@
+/* ============================================================
+   NAVBAR (merged: navbar.css + navbar-a.css)
+   ============================================================ */
+
+/* ---- Header wrapper ---- */
+.header {
+    height: 64px;
+    width: 95%;
+    max-width: 1100px;
+    position: sticky;
+    top: 20px;
+    margin: 20px auto;
+    z-index: 1000;
+    border-radius: 50px;
+    background: var(--color-nav-bg);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  .header.scrolled {
+    background: rgba(20, 40, 100, 0.75);
+    box-shadow: 0 8px 40px rgba(59, 130, 246, 0.4);
+  }
+  
+  /* ---- Navbar base ---- */
+  .navbar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+  }
+  
+  /* ---- Logo ---- */
+  .navbar__logo {
+    font-size: clamp(0.8rem, 5vw, 1.6rem);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+  }
+  
+  .navbar__logo:hover {
+    opacity: 0.75;
+  }
+  
+  /* ---- Hamburger (mobile only) ---- */
+  .navbar__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--color-text);
+    cursor: pointer;
+    z-index: 1001;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: var(--transition);
+  }
+  
+  .navbar__hamburger:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* ---- Toggle button ("TEST") ---- */
+  .toggle-button {
+    padding: 6px 16px;
+    cursor: pointer;
+    background: var(--color-btn-bg);
+    outline: var(--color-btn-outline);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-family);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all var(--transition);
+  }
+  
+  .toggle-button:hover {
+    background: var(--color-btn-bg-hover);
+    box-shadow: 0 4px 8px var(--color-shadow-dark);
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+  }
+  
+  .nav__toggle-mobile {
+    display: none;
+  }
+  
+  .nav__toggle-dekstop {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  
+  /* ---- Menu list (desktop) ---- */
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    margin: 0 auto;
+    list-style: none;
+    z-index: 10;
+  }
+  
+  /* ---- Sliding pill (desktop only, used by magnetic-pill-nav.js) ---- */
+  .navbar__pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: var(--color-btn-bg);
+    outline: var(--color-button-outline);
+    border: 1px solid rgba(96, 165, 250, 0.45);
+    box-shadow: 0 4px 12px var(--color-glow-strong);
+    border-radius: 50px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+  
+    transition:
+      left    0.38s cubic-bezier(0.4, 0, 0.2, 1),
+      width   0.38s cubic-bezier(0.4, 0, 0.2, 1),
+      top     0.38s cubic-bezier(0.4, 0, 0.2, 1),
+      height  0.38s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.25s ease;
+  }
+  
+  /* ---- Link items ---- */
+  .navbar__menu li {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .navbar__menu a.nav-link {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 6px 20px;
+    border-radius: 50px;
+    transition: color 0.25s ease;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  
+  .navbar__menu a.nav-link:hover,
+  .navbar__menu a.nav-link.active {
+    color: #ffffff;
+  }
+  
+  /* ============================================================
+     RESPONSIVE — Mobile
+     ============================================================ */
+  @media (max-width: 768px) {
+  
+    .header {
+      border-radius: 20px;
+      height: auto;
+      min-height: 56px;
+    }
+  
+    .navbar .container {
+      padding-block: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .navbar__hamburger {
+      display: block;
+      order: 3;
+    }
+  
+    .nav__toggle-dekstop {
+      display: none !important;
+    }
+  
+    .navbar__menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      text-align: center;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      width: auto;
+      padding: 8px 0 12px;
+      background: var(--color-nav-bg);
+      border: 1px solid var(--color-surface-border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px var(--color-shadow-dark);
+  
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate3d(0, -12px, 0);
+      will-change: transform, opacity;
+      transition:
+        opacity 0.25s ease,
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.3s ease;
+    }
+  
+    .navbar__menu.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 0);
+    }
+  
+    .navbar__pill {
+      display: none;
+    }
+  
+    .navbar__menu a.nav-link {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  
+    .navbar__menu a.nav-link.active,
+    .navbar__menu a.nav-link:hover {
+      background: rgba(59, 130, 246, 0.2);
+      color: #fff;
+    }
+  
+    .nav__toggle-mobile {
+      display: flex;
+      justify-content: center;
+      padding-block: 10px 4px;
+    }
+  
+    .nav__toggle-mobile .toggle-button {
+      width: 25%;
+      text-align: center;
+      border-radius: 12px;
+    }
+  }

@@ -1,0 +1,155 @@
+/* ============================================================
+           TOAST ALERT SUCCESS
+    ============================================================ */
+.alert {
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+
+  width: 100%;
+  max-width: 350px;
+  padding: var(--space-sm) var(--space-md);
+
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(16, 185, 129, 0.2);
+
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.alert.show {
+  display: flex;
+  animation: slideInTopRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.alert.notShow {
+  display: none;
+  animation: slideOutTopRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.alert-icon {
+  font-size: 24px;
+  color: #10b981;
+}
+
+.alert-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert .alert-top {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: #10b981;
+  letter-spacing: 1px;
+}
+
+.alert .alert-body {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.alert .close-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-faint);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.alert .close-btn:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* ============================================================
+               TOAST ALERT ERROR
+    ============================================================ */
+
+.error {
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+
+  width: 100%;
+  max-width: 350px;
+  padding: var(--space-sm) var(--space-md);
+
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background: var(--error-100);
+  border: 1px solid var(--error-500);
+  box-shadow: 0 10px 30px var(--color-shadow-dark), 0 0 20px var(--error-glow);
+  gap: var(--space-sm);
+}
+
+.error.show {
+  display: flex;
+  animation: slideInTopRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.error.notShow {
+  display: none;
+  animation: slideOutTopRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.error-icon {
+  font-size: 24px;
+  color: var(--error-500);
+}
+
+.error-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.error .error-top {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  color: var(--error-400);
+  letter-spacing: 1px;
+}
+
+.error .error-body {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.error .close-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-faint);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.error .close-btn:hover {
+  color: var(--error-600);
+  transform: scale(1.1);
+}

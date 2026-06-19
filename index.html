@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/testing/navbar-a.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -171,15 +170,15 @@
 
           <form class="contact__form" id="form" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <div class="form-group">
-              <label for="name">Your name</label>
+              <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
-              <label for="email">Your email</label>
+              <label for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
-              <label for="message">Your message</label>
+              <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
             </div>
             <div class="form-group">
@@ -187,19 +186,49 @@
             </div>
           </form>
 
-          <div class="form-alert" id="alert">
-            <button class="close-btn" id="close" aria-label="close"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
-             </button>
-            <p class="alert-top">SUCCESS!</p> <span></span>
-            <p class="alert-body">Your message is already send</p> <span></span>
-          </div>
         </div>
+      </div>
+
       </div>
     </section>
 
   </main>
+
+  <!-- ===== ALERT ===== -->
+  <div class="alert alert-success" id="alert">
+    <div class="alert-content">
+      <i class="fa-solid fa-circle-check alert-icon"></i>
+      <div class="alert-text">
+        <p class="alert-top">SUCCESS!</p>
+        <p class="alert-body">Your message has been sent successfully.</p>
+      </div>
+    </div>
+    <button class="close-btn" id="close" aria-label="close" data-dismiss-target="#alert">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+    <div class="error" id="error">
+      <div class="error-content">
+        <i class="fa-solid fa-circle-exclamation error-icon"></i>
+        <div class="error-text">
+          <p class="error-top">ERROR</p>
+          <p class="error-body">Ups! There's an error, please try again.</p>
+        </div>
+      </div>
+      <button class="close-btn" id="close" aria-label="close" data-dismiss-target="#error">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+
+  <!-- ===== BACK-TO-TOP BUTTON ===== -->
+<button class="button-backToTop" id="backToTop">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
@@ -222,21 +251,43 @@
           </div>
 
           <div class="footer__col3">
-            <h3>Follow Me</h3>
-            <div class="social-icons">
-              <a href="https://www.instagram.com/flerstilljobless/" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://github.com/mfarrellramadhan-arch" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-              <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i class="fa-brands fa-tiktok"></i>
-              </a>
+
+            <div class="col3__row1">
+              <h3>Follow Me</h3>
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/flerstilljobless/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://github.com/mfarrellramadhan-arch" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/farrell-ramadhan-al-farabi-071b003bb/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </div>
             </div>
+
+            <div class="col3__row2">
+              <h3>My Tools</h3>
+                <div class="social-icons">
+                  <a href="" target="_blank" rel="noopener" aria-label="css">
+                    <i class="fa-brands fa-css3-alt"></i>
+                  </a>
+                  <a href="" target="_blank" rel="noopener" aria-label="javascript">
+                    <i class="fa-brands fa-js"></i>
+                  </a>
+                  <a href="" target="_blank" rel="noopener" aria-label="html5">
+                    <i class="fa-brands fa-html5"></i>
+                  </a>
+                  <a href="" target="_blank" rel="noopener" aria-label="figma">
+                    <i class="fa-brands fa-figma"></i>
+                  </a>
+                </div>
+            </div>
+            
           </div>
 
       </div>
