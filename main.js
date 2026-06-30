@@ -33,21 +33,61 @@ function toggleMenu() {
 
 hamburger.addEventListener("click", toggleMenu);
 
+// menuLinks.forEach((link) => {
+//   link.addEventListener("click", (e) => {
+//     const href = link.getAttribute("href");
+
+//     if (isMobile() && href && href.startsWith("#")) {
+//       e.preventDefault();
+
+//       closeMenu();
+
+//       setTimeout(() => {
+//         const target = document.querySelector(href);
+//         if (target) {
+//           target.scrollIntoView({ behavior: "smooth" });
+//         }
+//       }, SCROLL_DELAY);
+//     } else {
+//       closeMenu();
+//     }
+//   });
+// });
+
+function closeMenuThenScroll(target) {
+  // Fallback timer in case transitionend never fires
+  // (e.g. menu was already closed, or transition gets interrupted)
+  let fallbackFired = false;
+  const fallback = setTimeout(() => {
+    fallbackFired = true;
+    runScroll();
+  }, SCROLL_DELAY);
+
+  function runScroll() {
+    clearTimeout(fallback);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function handler(e) {
+    if (e.target !== menu || e.propertyName !== "transform") return;
+    menu.removeEventListener("transitionend", handler);
+    if (!fallbackFired) runScroll();
+  }
+
+  menu.addEventListener("transitionend", handler);
+  closeMenu();
+}
+
 menuLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     const href = link.getAttribute("href");
 
     if (isMobile() && href && href.startsWith("#")) {
       e.preventDefault();
-
-      closeMenu();
-
-      setTimeout(() => {
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      }, SCROLL_DELAY);
+      const target = document.querySelector(href);
+      closeMenuThenScroll(target);
     } else {
       closeMenu();
     }
